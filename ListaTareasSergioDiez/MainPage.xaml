@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListaTareasSergioDiez.MainPage">
+
+    <VerticalStackLayout Padding="10">
+        <Button Text="Agregar Tarea" Command="{Binding AddTaskCommand}" />
+        <CollectionView ItemsSource="{Binding Tasks}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding IsCompleted}" />
+                        <Label Text="{Binding Name}" VerticalOptions="Center" />
+                        <Button Text="Editar" Command="{Binding EditTaskCommand}" />
+                        <Button Text="Eliminar" Command="{Binding DeleteTaskCommand}" />
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+
+</ContentPage>

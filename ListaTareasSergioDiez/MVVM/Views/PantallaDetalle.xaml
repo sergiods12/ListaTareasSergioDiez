@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListaTareasSergioDiez.MVVM.ViewModels"
+             x:Class="ListaTareasSergioDiez.MVVM.Views.PantallaDetalle"
+             Title="Detalle de Tarea">
+
+    <StackLayout Padding="10" BackgroundColor="MediumPurple">
+        <Entry Text="{Binding Tarea.Titulo}" Placeholder="Nombre de la tarea" />
+        <StackLayout Orientation="Horizontal">
+            <CheckBox IsChecked="{Binding Tarea.Completada}" />
+            <Label Text="Completada" VerticalOptions="Center" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
+            <Button Text="Guardar" Command="{Binding GuardarCommand}" BackgroundColor="Green" />
+            <Button Text="Cancelar" Command="{Binding CancelarCommand}" BackgroundColor="Green" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
